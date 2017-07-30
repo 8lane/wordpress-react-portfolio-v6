@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tctc91/portfolio-v6#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "bootstrap": "^4.0.0-alpha.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"

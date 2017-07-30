@@ -90,6 +90,7 @@ if ( ! function_exists( 'tc_portfolio_v6_setup' ) ) :
 				),
 				'public' => true,
 				'has_archive' => true,
+				'show_in_rest' => true,
 				)
 			);
 		}

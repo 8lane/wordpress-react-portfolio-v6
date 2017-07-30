@@ -25,7 +25,9 @@ gulp.task('browser-sync', function() {
 
 gulp.task('webpack', function() {
   return gulp.src(appDir + 'src/js/app.js')
-    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(webpack(require('./webpack.config.js'))).on('error', function handleError() {
+      this.emit('end');
+    })
     .pipe(gulp.dest(appDir + 'dist/'))
     .pipe(browserSync.stream());
 });

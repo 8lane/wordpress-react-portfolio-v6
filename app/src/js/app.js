@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { Projects } from './Projects';
+
 console.log('hi 3')
 
 const HeaderCTAs = () => {
@@ -15,25 +17,4 @@ const HeaderCTAs = () => {
 ReactDOM.render(
   <HeaderCTAs />,
   document.getElementById('tc-cta')
-);
-
-
-class Projects extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div class="projects">
-        projects in here
-      </div>
-    )
-  }
-}
-
-
-ReactDOM.render(
-  <Projects />,
-  document.getElementById('tc-projects')
 );
