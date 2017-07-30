@@ -1,5 +1,5 @@
-import { Projects } from './containers/Projects';
+import Projects from './containers/Projects';
 
 export {
-  Projects
-}
+  Projects,
+};

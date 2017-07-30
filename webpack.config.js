@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'app/src/js/app.js'),
+  entry: path.resolve(__dirname, 'app/src/js/app.jsx'),
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'app/dist')
@@ -15,7 +15,12 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-      }
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },
     ]
   }
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import axios from 'axios';
 
@@ -8,19 +7,19 @@ class Projects extends React.Component {
     super(props);
 
     this.state = {
-      projects: []
-    }
+      projects: [],
+    };
   }
 
   componentDidMount() {
     axios.get('http://dev/folio/v6/wordpress/wp-json/wp/v2/projects')
-      .then(response => {
+      .then((response) => {
         console.log(response);
         this.setState({
-          projects: response.data
-        })
+          projects: response.data,
+        });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -29,20 +28,15 @@ class Projects extends React.Component {
     const { projects } = this.state;
 
     return (
-      <div class="projects">
-        {projects.map(project => {
+      <div className="projects">
+        {projects.map((project) => {
           return (
             <a key={project.id} href={`./${project.slug}`}>{project.title.rendered}</a>
-          )
+          );
         })}
       </div>
-    )
+    );
   }
 }
 
 export default Projects;
-
-ReactDOM.render(
-  <Projects />,
-  document.getElementById('tc-projects')
-);
