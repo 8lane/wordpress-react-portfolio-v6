@@ -30,8 +30,13 @@ class Projects extends React.Component {
     return (
       <div className="projects">
         {projects.map((project) => {
+          const canViewMore = JSON.parse(project.metadata.canViewMore);
+
           return (
-            <a key={project.id} href={`./${project.slug}`}>{project.title.rendered}</a>
+            <div key={project.id}>
+              <a href={`./${project.slug}`}>{project.title.rendered}</a>
+              {canViewMore ? <button>view more</button> : null}
+            </div>
           );
         })}
       </div>

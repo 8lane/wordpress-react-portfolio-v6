@@ -88,12 +88,18 @@ if ( ! function_exists( 'tc_portfolio_v6_setup' ) ) :
 					'name' => __( 'Projects' ),
 					'singular_name' => __( 'Project' )
 				),
+				'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields' ),
 				'public' => true,
 				'has_archive' => true,
 				'show_in_rest' => true,
 				)
 			);
 		}
+
+		register_rest_field( 'projects', 'metadata', array(
+			'get_callback' => function ( $data ) {
+				return get_post_meta( $data['id'], '', '' );
+			}, ));
 	}
 endif;
 add_action( 'after_setup_theme', 'tc_portfolio_v6_setup' );
