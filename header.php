@@ -42,6 +42,8 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 
+		<section id="tc-cta"></section>
+
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tc-portfolio-v6' ); ?></button>
 			<?php
