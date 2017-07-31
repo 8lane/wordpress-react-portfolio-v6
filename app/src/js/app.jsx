@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Projects } from './Projects';
+import { Projects } from './Projects/containers';
 import { HeaderButtons } from './HeaderButtons';
 
 /* global document */

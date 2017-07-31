@@ -2,6 +2,12 @@ import React from 'react';
 import axios from 'axios';
 
 import API from '../../config';
+import extractErrors from '../../helpers';
+
+import { Errors } from '../../Errors/components';
+import { ProjectListing } from '../components';
+
+import getProjectYear from '../helpers';
 
 class Projects extends React.Component {
   constructor(props) {
@@ -9,54 +15,41 @@ class Projects extends React.Component {
 
     this.state = {
       projects: [],
+      errors: [],
     };
   }
 
   componentDidMount() {
     axios.get(API.getProjects)
-      .then((response) => {
-        console.log(response);
-        this.setState({
-          projects: response.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  getProjectYear(timestamp) {
-    return new Date(timestamp).getFullYear();
+      .then(response => this.setState({ projects: response.data }))
+      .catch(error => this.setState({ errors: [error.message] }));
   }
 
   render() {
-    const { projects } = this.state;
-    const currentYear = projects.length ? this.getProjectYear(projects[0].date) : null;
+    const { projects, errors } = this.state;
+    const currentYear = projects.length ? getProjectYear(projects[0]) : null;
     const categories = [currentYear];
 
     return (
       <div className="projects">
-        <h2>{currentYear}</h2>
+        {currentYear ? <h2>{currentYear}</h2> : null}
 
-        {projects.map((project) => {
-          let showCategory = false;
-          const year = this.getProjectYear(project.date);
+        {errors.length ? <Errors messages={errors} /> : null}
 
-          if (categories.indexOf(year) < 0) {
-            categories.push(year);
-            showCategory = true;
-          }
+        <ol className="list-unstyled">
+          {projects.map((project) => {
+            let showCategory = false;
 
-          const canViewMore = project.metadata.canViewMore && JSON.parse(project.metadata.canViewMore);
+            if (categories.indexOf(getProjectYear(project)) < 0) {
+              categories.push(getProjectYear(project));
+              showCategory = true;
+            }
 
-          return (
-            <div key={project.id}>
-              {showCategory ? <h3>{year}</h3> : null }
-              <h4>{project.title.rendered}</h4>
-              {canViewMore ? <a href={`./${project.slug}`}>View more</a> : null}
-            </div>
-          );
-        })}
+            return (
+              <ProjectListing key={project.id} project={project} showCategory={showCategory} />
+            );
+          })}
+        </ol>
       </div>
     );
   }
