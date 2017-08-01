@@ -19,17 +19,23 @@ class Tags extends React.Component {
   componentDidMount() {
     const { ids } = this.props;
 
-    if (ids) {
-      API.getProjectTags(ids)
+    if (ids && ids.length) {
+      API.getProjectTags(ids.join())
         .then(response => this.setState({ tags: response.data }))
         .catch(error => this.setState({ errors: [error.message] }));
     }
   }
 
   render() {
+    const { tags } = this.state;
+
     return (
       <div className="tags">
-        tags
+        {tags && tags.map((tag) => {
+          return (
+            <h4 key={tag.id}>{tag.name}</h4>
+          );
+        })}
       </div>
     );
   }

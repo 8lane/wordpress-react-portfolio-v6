@@ -51,7 +51,9 @@ class Projects extends React.Component {
                 project={project}
                 showCategory={showCategory}
                 isToggled={project.id === toggledProject}
-                onToggleMore={(id) => {
+                onToggleMore={(evt, id) => {
+                  evt.preventDefault();
+
                   if (id === toggledProject) {
                     this.setState({ toggledProject: null });
                   } else {

@@ -9,7 +9,11 @@ const ENDPOINT = {
 
 const API = () => {
   return {
-    getProjectTags: tags => axios.get(ENDPOINT.PROJECT_TAGS, { include: tags }),
+    getProjectTags: tags => axios.get(ENDPOINT.PROJECT_TAGS, {
+      params: {
+        include: tags
+      }
+    }),
     getProjects: () => axios.get(ENDPOINT.PROJECTS),
   }
 };
