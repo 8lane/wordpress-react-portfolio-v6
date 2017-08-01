@@ -14,6 +14,7 @@ class Projects extends React.Component {
 
     this.state = {
       projects: [],
+      toggledProject: null,
       errors: [],
     };
   }
@@ -25,7 +26,7 @@ class Projects extends React.Component {
   }
 
   render() {
-    const { projects, errors } = this.state;
+    const { projects, toggledProject, errors } = this.state;
     const currentYear = projects.length ? getProjectYear(projects[0]) : null;
     const categories = [currentYear];
 
@@ -45,7 +46,19 @@ class Projects extends React.Component {
             }
 
             return (
-              <ProjectListing key={project.id} project={project} showCategory={showCategory} />
+              <ProjectListing
+                key={project.id}
+                project={project}
+                showCategory={showCategory}
+                isToggled={project.id === toggledProject}
+                onToggleMore={(id) => {
+                  if (id === toggledProject) {
+                    this.setState({ toggledProject: null });
+                  } else {
+                    this.setState({ toggledProject: id });
+                  }
+                }}
+              />
             );
           })}
         </ol>
