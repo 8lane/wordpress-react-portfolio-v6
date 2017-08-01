@@ -11,6 +11,9 @@ Text Domain: tc-portfolio-v6
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+@import "variables";
+@import "bootstrap";
+
 body {
   background: white;
 }
