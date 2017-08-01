@@ -137,10 +137,8 @@ function tc_portfolio_v6_widgets_init() {
 		'name'          => esc_html__( 'Footer', 'tc-portfolio-v6' ),
 		'id'            => 'footer-1',
 		'description'   => esc_html__( 'Add widgets here.', 'tc-portfolio-v6' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<nav class="site-footer__experiments">',
+		'after_widget'  => '</nav>'
 	) );
 }
 add_action( 'widgets_init', 'tc_portfolio_v6_widgets_init' );
