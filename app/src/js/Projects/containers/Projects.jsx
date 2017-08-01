@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 import API from '../../config';
 import extractErrors from '../../helpers';
@@ -20,7 +19,7 @@ class Projects extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(API.getProjects)
+    API.getProjects()
       .then(response => this.setState({ projects: response.data }))
       .catch(error => this.setState({ errors: [error.message] }));
   }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Tags } from '../../Tags';
+
 import getProjectYear from '../helpers';
 
 const ProjectListing = ({ project, showCategory }) => {
@@ -7,18 +9,20 @@ const ProjectListing = ({ project, showCategory }) => {
 
   return (
     <li>
+      <Tags ids={project.tags} />
       {showCategory ? <h3>{getProjectYear(project)}</h3> : null }
       <h4>{project.title.rendered}</h4>
+      <p>{project.excerpt.rendered}</p>
       {hasCaseStudy ? <a href={`./${project.slug}`}>View more</a> : null}
     </li>
   );
 };
 
-React.defaultProps = {
+ProjectListing.defaultProps = {
   showCategory: false,
 };
 
-React.propTypes = {
+ProjectListing.propTypes = {
   project: React.PropTypes.object.isRequired,
   showCategory: React.PropTypes.bool,
 };
