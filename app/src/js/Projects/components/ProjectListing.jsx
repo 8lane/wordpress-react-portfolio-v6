@@ -9,31 +9,29 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
   const { metadata } = project;
 
   return (
-    <li>
+    <li className="project-listing">
       <a href={`./${project.slug}`} onClick={evt => onToggleMore(evt, project.id)}>
         {showCategory ? <h3>{getProjectYear(project)}</h3> : null }
         <h4>{project.title.rendered}</h4>
         <p>{project.excerpt.rendered}</p>
       </a>
-      {isToggled ?
-        <div>
-          <ProjectInfoBar
-            client={metadata.projectClientName && metadata.projectClientName[0]}
-            date={metadata.projectDate && metadata.projectDate[0]}
-            tags={project.tags}
-          />
 
-          <p className="project__excerpt-full">
-            {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
-          </p>
+      <div className={`project-listing__detailed ${isToggled ? 'project-listing__detailed--toggled' : null}`}>
+        <ProjectInfoBar
+          client={metadata.projectClientName && metadata.projectClientName[0]}
+          date={metadata.projectDate && metadata.projectDate[0]}
+          tags={project.tags}
+        />
 
-          <ViewMoreBtn
-            url={project.slug}
-            isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
-          />
-        </div>
-        : null
-      }
+        <p className="project__excerpt-full">
+          {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
+        </p>
+
+        <ViewMoreBtn
+          url={project.slug}
+          isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
+        />
+      </div>
     </li>
   );
 };

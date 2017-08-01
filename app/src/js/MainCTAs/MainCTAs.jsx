@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeaderButtons = () => {
+const MainCTAs = () => {
   return (
     <div>
       <button>View projects</button>
@@ -9,4 +9,4 @@ const HeaderButtons = () => {
   );
 };
 
-export default HeaderButtons;
+export default MainCTAs;

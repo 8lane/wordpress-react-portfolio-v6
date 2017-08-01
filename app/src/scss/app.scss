@@ -14,3 +14,15 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 body {
   background: white;
 }
+
+.project-listing {
+  &__detailed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease-in;
+
+    &--toggled {
+      max-height: 300px;
+    }
+  }
+}

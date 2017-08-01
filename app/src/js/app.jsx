@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Projects } from './Projects/containers';
-import { HeaderButtons } from './HeaderButtons';
+import { Header } from './Header';
 
 /* global document */
 ReactDOM.render(
@@ -11,6 +11,6 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <HeaderButtons />,
-  document.getElementById('tc-cta')
+  <Header />,
+  document.getElementById('tc-header')
 );
