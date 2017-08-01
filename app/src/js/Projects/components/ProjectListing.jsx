@@ -5,6 +5,9 @@ import { ProjectInfoBar, ViewMoreBtn } from '../components';
 import getProjectYear from '../helpers';
 
 const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
+
+  const { metadata } = project;
+
   return (
     <li>
       <a href={`./${project.slug}`} onClick={evt => onToggleMore(evt, project.id)}>
@@ -15,13 +18,18 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
       {isToggled ?
         <div>
           <ProjectInfoBar
-            client={project.metadata.clientName && project.metadata.clientName[0]}
-            date={project.date}
+            client={metadata.projectClientName && metadata.projectClientName[0]}
+            date={metadata.projectDate && metadata.projectDate[0]}
             tags={project.tags}
           />
+
+          <p className="project__excerpt-full">
+            {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
+          </p>
+
           <ViewMoreBtn
             url={project.slug}
-            isVisible={project.metadata.canViewMore && !!JSON.parse(project.metadata.canViewMore)}
+            isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
           />
         </div>
         : null
