@@ -30,10 +30,10 @@ class Tags extends React.Component {
     const { tags } = this.state;
 
     return (
-      <div className="tags">
+      <div className="project-tags">
         {tags && tags.map((tag) => {
           return (
-            <h4 key={tag.id}>{tag.name}</h4>
+            <TagItem key={tag.id} tag={tag.name} className="project-tags__tag" />
           );
         })}
       </div>

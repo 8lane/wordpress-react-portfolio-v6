@@ -1,9 +1,14 @@
 import React from 'react';
 
-const TagItem = ({ tag }) => {
+const TagItem = ({ tag, className }) => {
   return (
-    <span>tag</span>
+    <span className={className}>{tag}</span>
   );
+};
+
+TagItem.propTypes = {
+  tag: React.PropTypes.string.isRequired,
+  className: React.PropTypes.string.isRequired,
 };
 
 export default TagItem;

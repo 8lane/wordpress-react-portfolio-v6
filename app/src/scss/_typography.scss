@@ -1,4 +1,20 @@
-.display-1 { font-size: 3.5rem; }
-.display-2 { font-size: 3rem; }
-.display-3 { font-size: 2.5rem; }
-.display-4 { font-size: 2rem; }
+body { font-size: 1.3rem; }
+
+.display-1 { font-size: 3rem; }
+.display-2 { font-size: 2.5rem; }
+.display-3 { font-size: 2rem; }
+.display-4 { font-size: 1.5rem; }
+
+@include media-breakpoint-up(md) {
+  body { font-size: 1.2rem; }
+}
+
+@include media-breakpoint-up(lg) {
+  body { font-size: $font-size-base; }
+
+  .display-1 { font-size: 3.5rem; }
+  .display-2 { font-size: 3rem; }
+  .display-3 { font-size: 2.5rem; }
+  .display-4 { font-size: 2rem; }
+
+}

@@ -25,6 +25,16 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   background: linear-gradient(180deg,#000101 0,#1f4295);
 }
 
+.project-info-bar {
+  margin-top: $spacer * 3;
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: rgba(black, 0.4);
+  }
+}
+
 .project-listing {
   margin-bottom: $spacer * 4;
 
@@ -35,10 +45,31 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   &__preview {
     display: flex;
     align-items: center;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
 
   &__preview-meta {
     flex-grow: 1;
+    padding-top: $grid-gutter-width-base / 2;
+    padding-right: $grid-gutter-width-base / 2;
+    padding-bottom: $grid-gutter-width-base / 2;
+    padding-left: $grid-gutter-width-base / 2;
+
+    @include media-breakpoint-up(md) {
+      padding-left: 0;
+    }
+  }
+
+  &__preview-title {
+    color: $brand-dark;
+  }
+
+  &__preview-excerpt {
+    color: $brand-dark;
   }
 
   &__detailed {

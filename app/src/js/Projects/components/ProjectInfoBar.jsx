@@ -4,10 +4,19 @@ import { Tags } from '../../Tags';
 
 const ProjectInfoBar = ({ client, date, tags }) => {
   return (
-    <ul>
-      <li><span>Client:</span> {client}</li>
-      <li><span>Date:</span> {date}</li>
-      <li><Tags ids={tags} /></li>
+    <ul className="project-info-bar row list-unstyled">
+      <li className="col-xs-12 col-md-4">
+        <h4 className="project-info-bar__title">Client:</h4>
+        <p className="project-info-bar__value">{client}</p>
+      </li>
+      <li className="col-xs-12 col-md-4">
+        <h4 className="project-info-bar__title">Date:</h4>
+        <p className="project-info-bar__value">{date}</p>
+      </li>
+      <li className="col-xs-12 col-md-4">
+        <h4 className="project-info-bar__title">Tech:</h4>
+        <Tags ids={tags} />
+      </li>
     </ul>
   );
 };
