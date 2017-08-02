@@ -182,7 +182,7 @@ $sizes: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:       $white !default;
+$body-bg:       #f3f5f6 !default;
 $body-color:    $gray-dark !default;
 $inverse-bg:    $gray-dark !default;
 $inverse-color: $gray-lighter !default;
@@ -279,10 +279,10 @@ $display2-size: 2.5rem !default;
 $display3-size: 2.1rem !default;
 $display4-size: 1.5rem !default;
 
-$display1-weight:     600 !default;
-$display2-weight:     600 !default;
-$display3-weight:     600 !default;
-$display4-weight:     600 !default;
+$display1-weight:     $headings-font-weight !default;
+$display2-weight:     $headings-font-weight !default;
+$display3-weight:     $headings-font-weight !default;
+$display4-weight:     $headings-font-weight !default;
 $display-line-height: $headings-line-height !default;
 
 $lead-font-size:   1.25rem !default;

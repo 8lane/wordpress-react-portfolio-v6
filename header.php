@@ -34,7 +34,7 @@
 <body <?php body_class(); ?>>
 
 <div class="tc-app">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'tc-portfolio-v6' ); ?></a>
+	<a class="skip-link sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'tc-portfolio-v6' ); ?></a>
 
 	<header id="tc-header"></header>
 

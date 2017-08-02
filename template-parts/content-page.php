@@ -9,12 +9,12 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<article class="app-content__main">
+	<header class="app-content__header">
+		<?php the_title( '<h2 class="entry-title sr-only">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="app-content__body">
 		<?php
 			the_content();
 
@@ -26,7 +26,7 @@
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
+		<footer class="app-content__footer">
 			<?php
 				edit_post_link(
 					sprintf(

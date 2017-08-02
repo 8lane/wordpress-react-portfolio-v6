@@ -15,12 +15,32 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "bootstrap";
 @import "fonts/fonts";
 @import "utilities/utilities";
+@import "typography";
 
-body {
-  background: white;
+.header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#000101 0,#1f4295);
 }
 
 .project-listing {
+  margin-bottom: $spacer * 4;
+
+  &__body {
+    background: $white;
+  }
+
+  &__preview {
+    display: flex;
+    align-items: center;
+  }
+
+  &__preview-meta {
+    flex-grow: 1;
+  }
+
   &__detailed {
     max-height: 0;
     overflow: hidden;
@@ -30,4 +50,8 @@ body {
       max-height: 300px;
     }
   }
+}
+
+.projects {
+  margin-top: $spacer * 5;
 }

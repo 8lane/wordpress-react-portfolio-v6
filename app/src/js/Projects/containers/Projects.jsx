@@ -32,7 +32,7 @@ class Projects extends React.Component {
 
     return (
       <div className="projects">
-        {currentYear ? <h2>{currentYear}</h2> : null}
+        {currentYear ? <span className="display-2">{currentYear}</span> : null}
 
         {errors.length ? <Errors messages={errors} /> : null}
 

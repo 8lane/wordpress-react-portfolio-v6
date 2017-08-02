@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<footer class="footer text-center">
-		<div class="container-fluid">
+		<div class="container">
 			<?php dynamic_sidebar( 'footer-1' ); ?>
 
 			<ul class="footer__social list-unstyled">
