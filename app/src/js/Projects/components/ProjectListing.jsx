@@ -29,22 +29,20 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
         </a>
 
         <div className={`project-listing__detailed ${isToggled ? 'project-listing__detailed--toggled' : null}`}>
-          <div className="container-fluid">
-            <ProjectInfoBar
-              client={metadata.projectClientName && metadata.projectClientName[0]}
-              date={metadata.projectDate && metadata.projectDate[0]}
-              tags={project.tags}
-            />
+          <ProjectInfoBar
+            client={metadata.projectClientName && metadata.projectClientName[0]}
+            date={metadata.projectDate && metadata.projectDate[0]}
+            tags={project.tags}
+          />
 
-            <p className="project__excerpt-full">
-              {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
-            </p>
+        <p className="project-listing__excerpt-full">
+            {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
+          </p>
 
-            <ViewMoreBtn
-              url={project.slug}
-              isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
-            />
-          </div>
+          <ViewMoreBtn
+            url={project.slug}
+            isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
+          />
         </div>
       </div>
     </li>

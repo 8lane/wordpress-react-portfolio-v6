@@ -2,7 +2,7 @@ import React from 'react';
 
 const TagItem = ({ tag, className }) => {
   return (
-    <span className={className}>{tag}</span>
+    <span className={`tag tag--${tag} ${className}`}>{tag}</span>
   );
 };
 

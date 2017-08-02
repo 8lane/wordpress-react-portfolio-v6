@@ -1,0 +1,22 @@
+.tag {
+  position: relative;
+  padding-left: 2.5rem;
+
+  &:not(:last-child) {
+    margin-bottom: $spacer / 2;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    display: inline-block;
+    width: 30px;
+    height: 29px;
+  }
+
+  &--canvas:before { background: url('images/logos/logo-html5.svg') no-repeat center/contain; }
+  &--photoshop:before { background: url('images/logos/logo-adobe.svg') no-repeat center/contain; }
+  &--react:before { background: url('images/logos/logo-react.svg') no-repeat center/contain; }
+}
