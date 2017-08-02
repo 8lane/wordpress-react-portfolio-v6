@@ -26,6 +26,9 @@
 			siteURL: '<?php echo network_site_url('/') ?>'
 		};
 	</script>
+
+	<script src="https://use.typekit.net/iuh0oey.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
 <body <?php body_class(); ?>>
