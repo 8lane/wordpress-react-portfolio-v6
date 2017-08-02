@@ -1,6 +1,6 @@
 .tag {
   position: relative;
-  padding-left: 2.5rem;
+  padding-left: 2.3rem;
 
   &:not(:last-child) {
     margin-bottom: $spacer / 2;
@@ -13,7 +13,7 @@
     left: 0;
     display: inline-block;
     width: 30px;
-    height: 29px;
+    height: 24px;
   }
 
   &--canvas:before { background: url('images/logos/logo-html5.svg') no-repeat center/contain; }

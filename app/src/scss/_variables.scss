@@ -319,9 +319,9 @@ $list-inline-padding: 5px !default;
 $line-height-lg:         (4 / 3) !default;
 $line-height-sm:         1.5 !default;
 
-$border-radius:          .25rem !default;
-$border-radius-lg:       .3rem !default;
-$border-radius-sm:       .2rem !default;
+$border-radius:          4px !default;
+$border-radius-lg:       4px !default;
+$border-radius-sm:       4px !default;
 
 $component-active-color: $white !default;
 $component-active-bg:    $brand-primary !default;
@@ -372,9 +372,9 @@ $btn-primary-color:              $white !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             $btn-primary-bg !default;
 
-$btn-secondary-color:            $brand-primary !default;
+$btn-secondary-color:            #ccc !default;
 $btn-secondary-bg:               $white !default;
-$btn-secondary-border:           transparent !default;
+$btn-secondary-border:           #ccc !default;
 
 $btn-info-color:                 $white !default;
 $btn-info-bg:                    $brand-info !default;
@@ -397,8 +397,8 @@ $btn-link-disabled-color:        $gray-light !default;
 $btn-padding-x-sm:               .5rem !default;
 $btn-padding-y-sm:               .25rem !default;
 
-$btn-padding-x-lg:               1.5rem !default;
-$btn-padding-y-lg:               .75rem !default;
+$btn-padding-x-lg:               2.5rem !default;
+$btn-padding-y-lg:               1.3rem !default;
 
 $btn-block-spacing-y:            .5rem !default;
 $btn-toolbar-margin:             .5rem !default;

@@ -1,0 +1,44 @@
+.main-ctas {
+  position: relative;
+
+  &__sep {
+    color: rgba(255,255,255, 0.3);
+    font-size: .8rem;
+    font-weight: 100;
+    text-transform: uppercase;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      margin-left: 2px;
+      width: 1px;
+      height: 3rem;
+      background: rgba(255,255,255, 0.3);
+    }
+
+    &:before {
+      top: -2.2rem;
+    }
+
+    &:after {
+      bottom: -2.2rem
+    }
+  }
+
+  &__btn {
+    font-size: 1.3rem;
+    font-weight: 100;
+    transition: all .15s ease-in;
+
+    &--folio {
+      margin-right: 1.65rem;
+    }
+
+    &--cv {
+      margin-left: 1.65rem;
+    }
+  }
+}

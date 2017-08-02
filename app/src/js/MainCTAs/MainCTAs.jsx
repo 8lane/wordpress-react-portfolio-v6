@@ -1,7 +1,7 @@
 import React from 'react';
 
 const cvDownloadUrl = 'https://www.dropbox.com/s/4m28soy02jkc4zf/tc2017.pdf?dl=0';
-const btnClass = 'btn btn-secondary-outline btn-lg';
+const btnClass = 'btn btn-outline-secondary btn-lg';
 
 const MainCTAs = () => {
   return (

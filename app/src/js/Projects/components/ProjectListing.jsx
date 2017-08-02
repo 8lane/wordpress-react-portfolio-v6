@@ -13,9 +13,9 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
       {showCategory ? <h3>{getProjectYear(project)}</h3> : null }
 
       <div className="project-listing__body">
-        <ProjectCloseBtn onClose={onToggleMore} />
-
         <a className="project-listing__preview row" href={`./${project.slug}`} onClick={evt => onToggleMore(evt, project.id)}>
+          <ProjectCloseBtn />
+
           <div className="col-xs-12 col-md-5">
             <ProjectThumbnail alt={project.title.rendered} src={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`} />
           </div>

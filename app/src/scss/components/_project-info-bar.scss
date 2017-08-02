@@ -4,10 +4,13 @@
   padding-right: $spacer * 6;
   padding-bottom: $spacer * 3;
   padding-left: $spacer * 6;
+  font-size: 85%;
+
 
   &__title {
+    margin-bottom: $spacer / 2;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 80%;
     color: rgba(black, 0.4);
   }
 }

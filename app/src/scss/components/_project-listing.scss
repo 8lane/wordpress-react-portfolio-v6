@@ -7,6 +7,7 @@
   }
 
   &__close-btn {
+    pointer-events: none;
     opacity: 0;
     position: absolute;
     top: 1rem;
@@ -18,6 +19,11 @@
     color: $brand-dark;
     transition: 120ms ease-in;
     transition-delay: 100ms;
+
+    .project-listing__preview:hover & {
+      color: $brand-primary;
+      /* todo: pulse animate ? */
+    }
 
     .project-listing--toggled & {
       opacity: 1;
