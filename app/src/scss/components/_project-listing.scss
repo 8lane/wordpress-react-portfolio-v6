@@ -1,8 +1,34 @@
 .project-listing {
+  position: relative;
   margin-bottom: $spacer * 4;
 
   &__body {
     background: $white;
+  }
+
+  &__close-btn {
+    opacity: 0;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3.5rem;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    color: $brand-dark;
+    transition: 120ms ease-in;
+    transition-delay: 100ms;
+
+    .project-listing--toggled & {
+      opacity: 1;
+    }
+  }
+
+  &__close-btn-icon {
+    font-style: normal;
+    display: block;
+    vertical-align: middle;
+    line-height: 60px;
   }
 
   &__preview {
@@ -39,10 +65,20 @@
   &__detailed {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms ease-in;
+    transition: 200ms ease-in;
 
-    &--toggled {
+    .project-listing--toggled & {
       max-height: 450px;
+    }
+  }
+
+  &__detailed-body {
+    opacity: 0;
+    transition: 120ms ease-in;
+    transition-delay: 200ms;
+
+    .project-listing--toggled & {
+      opacity: 1;
     }
   }
 

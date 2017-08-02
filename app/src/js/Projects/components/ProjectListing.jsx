@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProjectInfoBar, ProjectThumbnail, ViewMoreBtn } from '../components';
+import { ProjectInfoBar, ProjectThumbnail, ProjectCloseBtn, ViewMoreBtn } from '../components';
 
 import getProjectYear from '../helpers';
 
@@ -9,10 +9,12 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
   const { metadata } = project;
 
   return (
-    <li className="project-listing">
+    <li className={`project-listing ${isToggled ? 'project-listing--toggled' : ''}`}>
       {showCategory ? <h3>{getProjectYear(project)}</h3> : null }
 
       <div className="project-listing__body">
+        <ProjectCloseBtn onClose={onToggleMore} />
+
         <a className="project-listing__preview row" href={`./${project.slug}`} onClick={evt => onToggleMore(evt, project.id)}>
           <div className="col-xs-12 col-md-5">
             <ProjectThumbnail alt={project.title.rendered} src={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`} />
@@ -29,20 +31,22 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
         </a>
 
         <div className={`project-listing__detailed ${isToggled ? 'project-listing__detailed--toggled' : null}`}>
-          <ProjectInfoBar
-            client={metadata.projectClientName && metadata.projectClientName[0]}
-            date={metadata.projectDate && metadata.projectDate[0]}
-            tags={project.tags}
-          />
+          <div className="project-listing__detailed-body">
+            <ProjectInfoBar
+              client={metadata.projectClientName && metadata.projectClientName[0]}
+              date={metadata.projectDate && metadata.projectDate[0]}
+              tags={project.tags}
+            />
 
-        <p className="project-listing__excerpt-full">
-            {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
-          </p>
+            <p className="project-listing__excerpt-full">
+              {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
+            </p>
 
-          <ViewMoreBtn
-            url={project.slug}
-            isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
-          />
+            <ViewMoreBtn
+              url={project.slug}
+              isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
+            />
+          </div>
         </div>
       </div>
     </li>
