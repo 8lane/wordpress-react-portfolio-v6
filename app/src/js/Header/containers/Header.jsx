@@ -23,13 +23,19 @@ class Header extends React.Component {
 
     return (
       <div className="header">
-        <a className="header__link" href={siteURL}>
-          <h1 className="header__title">{siteTitle}</h1>
-        </a>
-
-        <p className="header__description" dangerouslySetInnerHTML={{ __html: siteDescription }} />
-
-        <MainCTAs />
+        <div className="header__content container text-center">
+          <a className="header__link" href={siteURL}>
+            <img
+              alt={siteTitle}
+              className="header__logo img-fluid img-circle"
+              src={`${siteURL}wp-content/themes/tc-portfolio-v6/app/dist/images/logo.jpg`}
+              srcSet={`${siteURL}wp-content/themes/tc-portfolio-v6/app/dist/images/logo@2x.jpg 2x`}
+            />
+            <h1 className="header__title display-1">{siteTitle}</h1>
+          </a>
+          <p className="header__description" dangerouslySetInnerHTML={{ __html: siteDescription }} />
+          <MainCTAs />
+        </div>
       </div>
     );
   }
