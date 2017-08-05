@@ -1,11 +1,22 @@
 .project-info-bar {
-  margin-top: $grid-gutter-width-base / 2;
-  padding-top: $spacer * 2;
-  padding-right: $spacer * 6;
-  padding-bottom: $spacer * 3;
-  padding-left: $spacer * 6;
+  padding: $spacer;
   font-size: 85%;
 
+  @include media-breakpoint-up(sm) {
+    padding: $spacer * 2;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: $grid-gutter-width-base / 2;
+    padding-top: $spacer * 2;
+    padding-right: $spacer * 6;
+    padding-bottom: $spacer * 3;
+    padding-left: $spacer * 6;
+  }
+
+  @include media-breakpoint-up(lg) {
+
+  }
 
   &__title {
     margin-bottom: $spacer / 2;
