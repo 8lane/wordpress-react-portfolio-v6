@@ -1,3 +1,23 @@
+
+$logos: (
+  html5: 'images/logos/logo-html5.svg',
+  adobe: 'images/logos/logo-adobe.svg',
+  react: 'images/logos/logo-react.svg',
+  ai: 'images/logos/logo-ai.svg',
+  angular: 'images/logos/logo-angular.svg',
+  es6: 'images/logos/logo-es6.svg',
+  invision: 'images/logos/logo-invision.svg',
+  node: 'images/logos/logo-node.svg',
+  sass: 'images/logos/logo-sass.svg',
+  typescript: 'images/logos/logo-typescript.svg',
+  tdd: 'images/logos/logo-jasmine.svg',
+  jasmine: 'images/logos/logo-jasmine.svg',
+  canvas: 'images/logos/logo-html5.svg',
+  photoshop: 'images/logos/logo-adobe.svg',
+  php: 'images/logos/logo-php.svg',
+  webpack: 'images/logos/logo-webpack.svg'
+);
+
 .tag {
   position: relative;
   padding-left: 2.3rem;
@@ -16,7 +36,7 @@
     height: 24px;
   }
 
-  &--canvas:before { background: url('images/logos/logo-html5.svg') no-repeat center/contain; }
-  &--photoshop:before { background: url('images/logos/logo-adobe.svg') no-repeat center/contain; }
-  &--react:before { background: url('images/logos/logo-react.svg') no-repeat center/contain; }
+  @each $name, $logo in $logos {
+    &--#{$name}:before { background: url($logo) no-repeat center/contain; }
+  }
 }

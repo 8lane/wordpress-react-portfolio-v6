@@ -33,7 +33,7 @@ class Tags extends React.Component {
       <div className="project-tags">
         {tags && tags.map((tag) => {
           return (
-            <TagItem key={tag.id} tag={tag.name} className="project-tags__tag" />
+            <TagItem key={tag.id} name={tag.name} slug={tag.slug} className="project-tags__tag" />
           );
         })}
       </div>
