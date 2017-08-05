@@ -17,12 +17,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
+	<title><?php bloginfo( 'name' ); ?> &ndash; Senior Developer &amp; Designer from Bournemouth, UK</title>
+
 	<?php wp_head(); ?>
 
 	<script>
 		window.__PRELOADED_STATE__ = {
 			siteTitle: '<?php echo get_bloginfo('name') ?>',
-			siteDescription: '<?php echo get_bloginfo( 'description', 'display' ) ?>',
+			siteDescription: '<?php echo html_entity_decode(get_bloginfo( 'description', 'display' )) ?>',
 			siteURL: '<?php echo network_site_url('/') ?>'
 		};
 	</script>

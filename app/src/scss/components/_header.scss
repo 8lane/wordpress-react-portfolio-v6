@@ -1,7 +1,84 @@
 .header {
   height: 100vh;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg,#000101 0,#1f4295);
+  // background: linear-gradient(180deg,#000101 0,#1f4295);
+  background: url(images/header-bg.jpg) no-repeat center/cover;
+
+  &__link {
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+    color: $white;
+    font-size: 5rem;
+  }
+
+  &__description {
+    color: rgba($white, 0.6);
+  }
+
+  &__description-first,
+  &__description-second,
+  &__description-third {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  &__description-first {
+    color: $white;
+    font-size: 2.2rem;
+  }
+
+  &__description-second {
+    font-size: 1.8rem;
+  }
+
+  &__description-third {
+    font-size: 85%;
+    max-width: 54rem;
+    margin-top: 0.7rem;
+    margin-bottom: $spacer;
+  }
+
+  &__description-logo-react,
+  &__description-logo-es6,
+  &__description-logo-sass {
+    margin-left: 15px;
+
+    &:before {
+      content: "";
+      margin-right: 5px;
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  &__description-logo-react {
+    margin-left: 8px;
+
+    &:before {
+      background: url(map-get($logos, 'react')) no-repeat center/100%;
+    }
+  }
+
+  &__description-logo-es6 {
+    &:before {
+      background: url(map-get($logos, 'es6')) no-repeat center/100%;
+    }
+  }
+
+  &__description-logo-sass {
+    &:before {
+      background: url(map-get($logos, 'sass')) no-repeat center/100%;
+    }
+  }
+
 }
