@@ -87,17 +87,25 @@
   &__description-second,
   &__description-third {
     opacity: 0;
-    transition: 250ms ease-in;
-    transition-delay: 200ms;
 
     .wf-active & {
-      opacity: 1;
+      animation: fadeSlideIn 300ms ease-in forwards;
+      animation-delay: 200ms;
     }
   }
 
-  &__description-first { transition-delay: 200ms; }
-  &__description-second { transition-delay: 600ms; }
-  &__description-third { transition-delay: 600ms; }
+  &__description-first {
+    .wf-active & {
+      animation-delay: 200ms;
+    }
+  }
+
+  &__description-second,
+  &__description-third {
+    .wf-active & {
+      animation-delay: 600ms;
+    }
+  }
 
   .main-ctas__btn--folio,
   .main-ctas__btn--cv,
