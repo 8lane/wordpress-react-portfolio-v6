@@ -31,6 +31,7 @@ $marker-size-xs: 90px;
 
   &:hover {
     border-color: $brand-success;
+    background-color: rgba($brand-success, 0.15);
 
     &:after {
       background: $brand-success;

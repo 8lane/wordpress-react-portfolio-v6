@@ -17,3 +17,13 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "utilities/utilities";
 @import "typography";
 @import "components/index";
+
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: rgba($brand-success, 0.15);
+}
+
+.btn-outline-secondary:hover {
+  color: #ffffff;
+  background-color: rgba($white, 0.15);
+}
