@@ -22,6 +22,16 @@ const TimelineCircle = ({ size, half }) => {
   );
 };
 
+const TimelineStem = () => {
+  return (
+    <svg width="2" height="35" className="timeline__stem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 36.62">
+      <g>
+        <path className="timeline__stem-path" d="M1 0v36.62" />
+      </g>
+    </svg>
+  );
+};
+
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +66,7 @@ class Projects extends React.Component {
             <TimelineCircle size={93} half="left" />
             <TimelineCircle size={93} half="right" />
             <span className="timeline-marker__label display-4">{currentYear}</span>
+            <TimelineStem />
           </a>
           : null
         }
