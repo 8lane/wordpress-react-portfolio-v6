@@ -7,6 +7,14 @@
   // background: linear-gradient(180deg,#000101 0,#1f4295);
   background: url(images/header-bg.jpg) no-repeat center/cover;
 
+  &__content {
+    margin-top: -3rem;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
+  }
+
   &__link {
     &:hover, &:focus {
       text-decoration: none;
@@ -16,7 +24,10 @@
   &__title {
     margin-bottom: 0;
     color: $white;
-    font-size: 5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 5rem;
+    }
   }
 
   &__description {
@@ -32,18 +43,26 @@
 
   &__description-first {
     color: $white;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.2rem;
+    }
   }
 
   &__description-second {
-    font-size: 1.8rem;
+    margin-top: .5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.8rem;
+    }
   }
 
   &__description-third {
-    font-size: 85%;
     max-width: 54rem;
-    margin-top: 0.7rem;
+    margin-top: 0.6rem;
     margin-bottom: $spacer;
+    font-size: 85%;
   }
 
   &__description-logo-react,

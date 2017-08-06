@@ -19,6 +19,17 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "typography";
 @import "components/index";
 
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 1rem 2rem;
+  font-size: inherit;
+
+  @include media-breakpoint-up(md) {
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+    font-size: $font-size-sm;
+  }
+}
+
 .btn-outline-success:hover {
   color: #fff;
   background-color: rgba($brand-success, 0.15);

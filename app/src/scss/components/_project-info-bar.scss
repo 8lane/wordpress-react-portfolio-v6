@@ -9,9 +9,9 @@
   @include media-breakpoint-up(lg) {
     margin-top: $grid-gutter-width-base / 2;
     padding-top: $spacer * 2;
-    padding-right: $spacer * 6;
+    padding-right: $spacer * 5;
     padding-bottom: $spacer * 3;
-    padding-left: $spacer * 6;
+    padding-left: $spacer * 5;
   }
 
   @include media-breakpoint-up(lg) {

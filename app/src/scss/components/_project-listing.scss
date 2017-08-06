@@ -112,8 +112,8 @@
     }
 
     @include media-breakpoint-up(lg) {
-      padding-left: $spacer * 6;
-      padding-right: $spacer * 6;
+      padding-left: $spacer * 5;
+      padding-right: $spacer * 5;
       padding-bottom: $spacer * 3;
     }
   }
