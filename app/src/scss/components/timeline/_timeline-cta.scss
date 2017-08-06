@@ -1,22 +1,6 @@
 $marker-size-xs: 90px;
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes timelineGlow {
-  from { box-shadow: 0 0 15px rgba($white, 0.25); }
-  50%   { box-shadow: 0 0 2px rgba($white, 0.1); }
-  to { box-shadow: 0 0 15px rgba($white, 0.25); }
-}
-
-@keyframes timelineCircleStemIn {
-  from { height: 0; transform: translateY(0); }
-  to { height: 35px; transform: translateY(-35px); }
-}
-
-.timeline-marker {
+.timeline-cta {
   position: absolute;
   top: -124px;
   color: $white;
@@ -42,8 +26,8 @@ $marker-size-xs: 90px;
   &:hover {
     background-color: rgba($brand-success, 0.15);
 
-    .circle,
-    .timeline__stem-path {
+    .timeline-circle__path,
+    .timeline-stem__path {
       stroke: $brand-success;
     }
   }

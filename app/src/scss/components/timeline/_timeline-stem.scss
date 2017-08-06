@@ -1,0 +1,17 @@
+.timeline-stem {
+  position: absolute;
+  bottom: -35px;
+
+  &__path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 1s ease-in forwards;
+    animation-delay: 2.8s;
+
+    fill: none;
+    stroke: $white;
+    stroke-miterlimit: 10;
+    stroke-width: 1px;
+    transition: 200ms ease-in;
+  }
+}
