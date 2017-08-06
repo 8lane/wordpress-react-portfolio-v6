@@ -22,7 +22,8 @@
     "axios": "^0.16.2",
     "bootstrap": "^4.0.0-alpha.6",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -1,0 +1,53 @@
+$marker-size-xs: 90px;
+
+@keyframes timelineGlow {
+  from { box-shadow: 0 0 15px rgba($white, 0.25); }
+  50%   { box-shadow: 0 0 2px rgba($white, 0.1); }
+  to { box-shadow: 0 0 15px rgba($white, 0.25); }
+}
+
+.timeline-marker {
+  position: absolute;
+  top: -124px;
+  color: $white;
+  width: $marker-size-xs;
+  height: $marker-size-xs;
+  z-index: 1;
+  border: 1px solid $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  margin-left: -#{$marker-size-xs / 2};
+  animation: timelineGlow 1500ms infinite;
+  transition: 200ms ease-in;
+  cursor: pointer;
+
+  &:hover, &:after {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &:hover {
+    border-color: $brand-success;
+
+    &:after {
+      background: $brand-success;
+    }
+  }
+
+  &:after {
+    content: "";
+    background: $white;
+    width: 1px;
+    height: 35px;
+    position: absolute;
+    bottom: -35px;
+    transition: 200ms ease-in;
+  }
+
+  &__label {
+    font-size: 110%;
+  }
+}

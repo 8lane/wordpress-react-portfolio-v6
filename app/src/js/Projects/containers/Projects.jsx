@@ -1,7 +1,7 @@
 import React from 'react';
 
 import API from '../../config';
-import extractErrors from '../../helpers';
+import { scrollToElement, extractErrors } from '../../helpers';
 
 import { Errors } from '../../Errors/components';
 import { ProjectListing } from '../components';
@@ -32,7 +32,16 @@ class Projects extends React.Component {
 
     return (
       <div className="projects">
-        {currentYear ? <span className="display-2">{currentYear}</span> : null}
+        {currentYear ?
+          <a
+            onClick={e => scrollToElement(e, 'tc-projects')}
+            href="#tc-projects"
+            className="timeline-marker timeline-marker--current"
+          >
+            <span className="timeline-marker__label display-4">{currentYear}</span>
+          </a>
+          : null
+        }
 
         {errors.length ? <Errors messages={errors} /> : null}
 
