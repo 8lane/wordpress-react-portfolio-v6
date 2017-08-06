@@ -81,4 +81,34 @@
     }
   }
 
+  /* Animations */
+  &__title,
+  &__description-first,
+  &__description-second,
+  &__description-third {
+    opacity: 0;
+    transition: 250ms ease-in;
+    transition-delay: 200ms;
+
+    .wf-active & {
+      opacity: 1;
+    }
+  }
+
+  &__description-first { transition-delay: 200ms; }
+  &__description-second { transition-delay: 600ms; }
+  &__description-third { transition-delay: 600ms; }
+
+  .main-ctas__btn--folio,
+  .main-ctas__btn--cv,
+  .main-ctas__sep {
+    opacity: 0;
+
+    .wf-active & {
+      animation: fadeSlideIn 300ms ease-in forwards;
+      animation-delay: 1s;
+    }
+  }
+
+
 }
