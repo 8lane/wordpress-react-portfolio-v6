@@ -1,0 +1,84 @@
+.footer {
+  background: $brand-dark;
+  margin-top: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  &__credits {
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 5rem;
+    }
+  }
+
+  &__contact {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid rgba($white, 0.15);
+    padding-bottom: $spacer * 2;
+    color: $white;
+  }
+
+  &__link {
+    color: rgba($white, 0.8);
+
+    &--contact {
+      display: block;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      color: $white;
+      border-radius: 40px;
+      margin-top: $spacer;
+      padding: .7rem 2rem;
+
+      @include media-breakpoint-up(sm) {
+        width: auto;
+        display: inline-block;
+        margin-top: 0;
+        margin-left: $spacer / 2;
+      }
+    }
+
+    &--credit {
+      font-size: 70%;
+      color: rgba($white, 0.5);
+    }
+  }
+
+  &__icon {
+    display: block;
+    padding: $spacer * 1.2;
+    line-height: 17px;
+
+    @include media-breakpoint-up(sm) {
+      padding: $spacer * 1.5;
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+
+      i {
+        display: inline-block;
+        animation: pulse 150ms ease-in forwards;
+      }
+    }
+
+    &--github, &--github:hover { color: #fafafa; }
+    &--linkedin, &--linkedin:hover { color: #0077b5; }
+    &--twitter, &--twitter:hover { color: #1da1f2; }
+    &--medium, &--medium:hover { color: #00ab6b; }
+
+    .footer__item:not(:last-child) & {
+      border-right: 1px solid rgba($white, 0.15);
+    }
+  }
+}

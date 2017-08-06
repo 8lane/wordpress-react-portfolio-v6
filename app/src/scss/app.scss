@@ -19,6 +19,10 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "typography";
 @import "components/index";
 
+body {
+  min-width: 320px;
+}
+
 .btn-lg,
 .btn-group-lg > .btn {
   padding: 1rem 2rem;
