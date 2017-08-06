@@ -1,5 +1,4 @@
 .project-listing {
-  position: relative;
   margin-bottom: $spacer * 4;
 
   &__body {
@@ -10,8 +9,8 @@
     pointer-events: none;
     opacity: 0;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 2.5rem;
     font-size: 3.5rem;
     height: 60px;
     width: 60px;
@@ -21,8 +20,7 @@
     transition-delay: 100ms;
 
     .project-listing__preview:hover & {
-      color: $brand-primary;
-      /* todo: pulse animate ? */
+      animation: pulse 300ms ease-in forwards;
     }
 
     .project-listing--toggled & {
@@ -38,6 +36,7 @@
   }
 
   &__preview {
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -115,6 +114,25 @@
       padding-left: $spacer * 5;
       padding-right: $spacer * 5;
       padding-bottom: $spacer * 3;
+    }
+  }
+
+  &__date {
+    margin-top: $spacer * 4;
+    margin-bottom: $spacer * 2;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    color: $brand-dark;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: $spacer * 7;
+      margin-bottom: $spacer * 3;
+      font-size: 2.8rem;
     }
   }
 }

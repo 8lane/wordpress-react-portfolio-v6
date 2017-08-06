@@ -9,7 +9,10 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
 
   return (
     <li className={`project-listing ${isToggled ? 'project-listing--toggled' : ''}`}>
-      {showCategory ? <h3>{getProjectYear(project)}</h3> : null }
+      {showCategory ?
+        <h3 className="project-listing__date">{getProjectYear(project)}</h3>
+        : null
+      }
 
       <div className="project-listing__body">
         <a className="project-listing__preview row" href={`./${project.slug}`} onClick={evt => onToggleMore(evt, project.id)}>

@@ -14,6 +14,12 @@
   }
 }
 
+@keyframes pulse {
+  from { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
 @keyframes timelineGlow {
   from { box-shadow: 0 0 15px rgba($white, 0.25); }
   50%   { box-shadow: 0 0 2px rgba($white, 0.1); }
