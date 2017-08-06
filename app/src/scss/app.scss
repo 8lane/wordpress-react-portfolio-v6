@@ -18,6 +18,37 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "typography";
 @import "components/index";
 
+
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.circle {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2s linear forwards;
+  animation-delay: 1s;
+
+  fill: none;
+  stroke: $white;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+  transition: 200ms ease-in;
+
+  &--left {
+
+  }
+
+  &--right {
+
+  }
+}
+
+
+
 .btn-outline-success:hover {
   color: #fff;
   background-color: rgba($brand-success, 0.15);

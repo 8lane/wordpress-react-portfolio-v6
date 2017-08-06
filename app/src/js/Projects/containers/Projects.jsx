@@ -8,6 +8,20 @@ import { ProjectListing } from '../components';
 
 import getProjectYear from '../helpers';
 
+const TimelineCircle = ({ size, half }) => {
+  return (
+    <svg width={size / 2} height={size} xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 84.1 168.2`}>
+      <g>
+        {half === 'left' ?
+          <path className={`circle circle--${half}`} d="M84.1 1A83.1 83.1 0 0 0 1 84.1a83.1 83.1 0 0 0 83.1 83.1" />
+          :
+          <path className={`circle circle--${half}`} d="M0,1H0A83.1,83.1,0,0,1,83.1,84.1h0A83.1,83.1,0,0,1,0,167.2H0" />
+        }
+      </g>
+    </svg>
+  );
+};
+
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -32,12 +46,15 @@ class Projects extends React.Component {
 
     return (
       <div className="projects">
+
         {currentYear ?
           <a
             onClick={e => scrollToElement(e, 'tc-projects')}
             href="#tc-projects"
             className="timeline-marker timeline-marker--current"
           >
+            <TimelineCircle size={93} half="left" />
+            <TimelineCircle size={93} half="right" />
             <span className="timeline-marker__label display-4">{currentYear}</span>
           </a>
           : null

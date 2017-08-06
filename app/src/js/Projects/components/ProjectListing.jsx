@@ -5,7 +5,6 @@ import { ProjectInfoBar, ProjectThumbnail, ProjectCloseBtn, ViewMoreBtn } from '
 import getProjectYear from '../helpers';
 
 const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
-
   const { metadata } = project;
 
   return (

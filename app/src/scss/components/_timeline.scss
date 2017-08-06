@@ -1,5 +1,6 @@
 $marker-size-xs: 90px;
 
+
 @keyframes timelineGlow {
   from { box-shadow: 0 0 15px rgba($white, 0.25); }
   50%   { box-shadow: 0 0 2px rgba($white, 0.1); }
@@ -13,14 +14,14 @@ $marker-size-xs: 90px;
   width: $marker-size-xs;
   height: $marker-size-xs;
   z-index: 1;
-  border: 1px solid $white;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   left: 50%;
   margin-left: -#{$marker-size-xs / 2};
   animation: timelineGlow 1500ms infinite;
+  animation-delay: 1.5s;
+  border-radius: 50%;
   transition: 200ms ease-in;
   cursor: pointer;
 
@@ -30,8 +31,11 @@ $marker-size-xs: 90px;
   }
 
   &:hover {
-    border-color: $brand-success;
     background-color: rgba($brand-success, 0.15);
+
+    .circle {
+      stroke: $brand-success;
+    }
 
     &:after {
       background: $brand-success;
@@ -49,6 +53,7 @@ $marker-size-xs: 90px;
   }
 
   &__label {
+    position: absolute;
     font-size: 110%;
   }
 }
