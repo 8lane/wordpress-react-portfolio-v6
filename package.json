@@ -21,6 +21,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "bootstrap": "^4.0.0-alpha.6",
+    "picturefill": "^3.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "scrollreveal": "^3.3.6",

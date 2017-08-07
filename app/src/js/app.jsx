@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom';
 import { Projects } from './Projects/containers';
 import { Header } from './Header';
 
+const picturefill = require('picturefill');
+
+picturefill();
+
 /* global document */
 ReactDOM.render(
   <Projects />,

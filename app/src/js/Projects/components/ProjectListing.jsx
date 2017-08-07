@@ -29,7 +29,11 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
           <ProjectCloseBtn />
 
           <div className="col-xs-12 col-md-5">
-            <ProjectThumbnail alt={project.title.rendered} src={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`} />
+            <ProjectThumbnail
+              alt={project.title.rendered}
+              src={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`}
+              srcset={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}@2x.jpg 2x`}
+            />
           </div>
           <div className="col-xs-12 col-md-7">
             <div className="project-listing__preview-meta">
