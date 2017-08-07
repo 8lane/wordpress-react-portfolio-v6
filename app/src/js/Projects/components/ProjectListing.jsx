@@ -40,9 +40,12 @@ const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
               tags={project.tags}
             />
 
-            <p className="project-listing__excerpt-full">
-              {metadata.projectExcerptFull && metadata.projectExcerptFull[0]}
-            </p>
+            <p
+              className="project-listing__excerpt-full"
+              dangerouslySetInnerHTML={{
+                __html: metadata.projectExcerptFull && metadata.projectExcerptFull[0]
+              }}
+            />
 
             <ViewMoreBtn
               url={project.slug}
