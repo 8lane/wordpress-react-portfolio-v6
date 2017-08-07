@@ -1,14 +1,24 @@
 import React from 'react';
 
+import ScrollReveal from 'scrollreveal';
+
 import { ProjectInfoBar, ProjectThumbnail, ProjectCloseBtn, ViewMoreBtn } from '../components';
 
 import getProjectYear from '../helpers';
 
+const sr = ScrollReveal();
+
+const scrollConfig = {
+  duration: 400,
+  delay: 150,
+};
+
 const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
   const { metadata } = project;
 
+
   return (
-    <li className={`project-listing ${isToggled ? 'project-listing--toggled' : ''}`}>
+    <li ref={(element) => { sr.reveal(element, scrollConfig); }} className={`project-listing ${isToggled ? 'project-listing--toggled' : ''}`}>
       {showCategory ?
         <h3 className="project-listing__date">{getProjectYear(project)}</h3>
         : null

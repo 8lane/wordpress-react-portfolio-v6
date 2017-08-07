@@ -23,6 +23,7 @@
     "bootstrap": "^4.0.0-alpha.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "scrollreveal": "^3.3.6",
     "smooth-scroll": "github:cferdinandi/smooth-scroll"
   },
   "devDependencies": {
