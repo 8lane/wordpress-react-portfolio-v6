@@ -18,6 +18,18 @@ class Header extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.videoRef.addEventListener('loadeddata', () => {
+      window.setTimeout(() => {
+        this.videoRef.play();
+      }, 2800);
+    }, false);
+  }
+
+  componentWillUnmount() {
+    this.videoRef.removeEventListener('loadeddata');
+  }
+
   render() {
     const { siteTitle, siteDescription, siteURL } = this.state;
 
@@ -25,7 +37,7 @@ class Header extends React.Component {
       <div className="header">
         <div className="header__bg" />
 
-        <video className="header__video" autoPlay muted>
+        <video ref={(video) => { this.videoRef = video; }} className="header__video" muted>
           <source src="./wp-content/themes/tc-portfolio-v6/app/dist/images/header-video.mp4" type="video/mp4" />
           <source src="media/demo.ogv" type="video/ogg" />
           <source src="media/demo.webm" type="video/webm" />
