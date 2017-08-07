@@ -23,6 +23,14 @@ class Header extends React.Component {
 
     return (
       <div className="header">
+        <div className="header__bg" />
+
+        <video className="header__video" autoPlay muted>
+          <source src="./wp-content/themes/tc-portfolio-v6/app/dist/images/header-video.mp4" type="video/mp4" />
+          <source src="media/demo.ogv" type="video/ogg" />
+          <source src="media/demo.webm" type="video/webm" />
+        </video>
+
         <div className="header__content container">
           <a className="header__link" href={siteURL}>
             <h1 className="header__title display-1">{siteTitle}</h1>
