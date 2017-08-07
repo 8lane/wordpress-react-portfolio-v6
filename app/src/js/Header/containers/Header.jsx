@@ -16,9 +16,23 @@ class Header extends React.Component {
       siteDescription: preloadedState.siteDescription,
       siteURL: preloadedState.siteURL,
     };
+
+    this.setVideoWidth = this.setVideoWidth.bind(this);
   }
 
   componentDidMount() {
+    this.setVideoListeners();
+  }
+
+  componentWillUnmount() {
+    this.removeVideoListeners();
+  }
+
+  setVideoListeners() {
+    this.setVideoWidth();
+
+    window.addEventListener('resize', this.setVideoWidth);
+
     this.videoRef.addEventListener('loadeddata', () => {
       window.setTimeout(() => {
         this.videoRef.play();
@@ -26,8 +40,14 @@ class Header extends React.Component {
     }, false);
   }
 
-  componentWillUnmount() {
+  setVideoWidth() {
+    this.videoRef.width = window.outerWidth;
+    this.videoRef.height = window.outerHeight;
+  }
+
+  removeVideoListeners() {
     this.videoRef.removeEventListener('loadeddata');
+    window.removeEventListener('resize', this.setVideoWidth);
   }
 
   render() {

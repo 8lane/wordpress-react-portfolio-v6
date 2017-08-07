@@ -15,7 +15,7 @@
   overflow: hidden;
 
   &__bg {
-    background: linear-gradient(90deg,#000101 0,#1f4295);
+    background: linear-gradient(to right, rgba(#000101, 1) 0%,rgba(#000101, 0.95) 11%,rgba(#1f4295, 0.95) 89%,rgba(#1f4295, 1) 100%);
     height: 100vh;
     min-height: 700px;
     position: absolute;
@@ -24,15 +24,14 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    opacity: 0.95;
   }
 
   &__video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 0;
+    object-fit: fill;
   }
 
   &__content {
