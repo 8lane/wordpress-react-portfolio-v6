@@ -1,12 +1,15 @@
 .project-info-bar {
+  min-height: 300px;
   padding: $spacer;
   font-size: 85%;
 
   @include media-breakpoint-up(sm) {
+    min-height: 206px;
     padding: $spacer * 2;
   }
 
   @include media-breakpoint-up(lg) {
+    min-height: 176px;
     margin-top: $grid-gutter-width-base / 2;
     padding-top: $spacer * 2;
     padding-right: $spacer * 5;

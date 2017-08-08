@@ -1,9 +1,8 @@
 import React from 'react';
-
+import classNames from 'classnames';
 import ScrollReveal from 'scrollreveal';
 
 import { ProjectInfoBar, ProjectThumbnail, ProjectCloseBtn, ViewMoreBtn } from '../components';
-
 import getProjectYear from '../helpers';
 
 const sr = ScrollReveal();
@@ -13,64 +12,123 @@ const scrollConfig = {
   delay: 150,
 };
 
-const ProjectListing = ({ project, showCategory, isToggled, onToggleMore }) => {
-  const { metadata } = project;
+class ProjectListing extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      hasLoaded: false,
+    };
 
-  return (
-    <li ref={(element) => { sr.reveal(element, scrollConfig); }} className={`project-listing ${isToggled ? 'project-listing--toggled' : ''}`}>
-      {showCategory ?
-        <h3 className="project-listing__date">{getProjectYear(project)}</h3>
-        : null
-      }
+    this.calculateProjectHeight = this.calculateProjectHeight.bind(this);
+  }
 
-      <div className="project-listing__body">
-        <a className="project-listing__preview row" href={`./${project.slug}`} onClick={evt => onToggleMore(evt, project.id)}>
-          <ProjectCloseBtn />
+  componentDidMount() {
+    window.addEventListener('resize', this.calculateProjectHeight);
+  }
 
-          <div className="col-xs-12 col-md-5">
-            <ProjectThumbnail
-              alt={project.title.rendered}
-              src={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`}
-              srcset={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}@2x.jpg 2x`}
-            />
-          </div>
-          <div className="col-xs-12 col-md-7">
-            <div className="project-listing__preview-meta">
-              <h3 className="project-listing__preview-title display-3">{project.title.rendered}</h3>
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.calculateProjectHeight);
+  }
+
+  setProjectHeight() {
+    this.listingRef.style.maxHeight = `${this.listingRef.firstElementChild.clientHeight}px`;
+  }
+
+  calculateProjectHeight() {
+    if (this.listingRef && this.listingRef.classList.contains('project-listing__detailed--toggled')) {
+      this.setProjectHeight();
+    }
+  }
+
+  render() {
+    const {
+      project: {
+        metadata
+      },
+      project,
+      showCategory,
+      isToggled,
+      onToggleMore
+    } = this.props;
+
+    const { hasLoaded } = this.state;
+
+    return (
+      <li
+        ref={(element) => {
+          element && sr.reveal(element, scrollConfig);
+        }}
+        className={`project-listing ${isToggled ? 'project-listing--toggled' : ''}`}
+      >
+        {showCategory ?
+          <h3 className="project-listing__date">{getProjectYear(project)}</h3>
+          : null
+        }
+
+        <div className="project-listing__body">
+          <a className="project-listing__preview row" href={`./${project.slug}`} onClick={evt => onToggleMore(evt, project.id)}>
+            <ProjectCloseBtn />
+
+            <div className="col-xs-12 col-md-5">
+              <ProjectThumbnail
+                alt={project.title.rendered}
+                src={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`}
+                srcset={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}@2x.jpg 2x`}
+              />
+            </div>
+            <div className="col-xs-12 col-md-7">
+              <div className="project-listing__preview-meta">
+                <h3 className="project-listing__preview-title display-3">
+                  {project.title.rendered}
+                </h3>
+                <p
+                  className="project-listing__preview-excerpt"
+                  dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}
+                />
+              </div>
+            </div>
+          </a>
+
+          <div
+            ref={(element) => {
+              this.listingRef = element;
+
+              if (this.listingRef && !hasLoaded) {
+                this.setState({ hasLoaded: true });
+                this.setProjectHeight();
+              }
+            }}
+            className={classNames('project-listing__detailed', {
+              'project-listing__detailed--toggled': isToggled,
+              'project-listing__detailed--loaded': hasLoaded,
+            })}
+          >
+            <div className="project-listing__detailed-body">
+              <ProjectInfoBar
+                client={metadata.projectClientName && metadata.projectClientName[0]}
+                date={metadata.projectDate && metadata.projectDate[0]}
+                tags={project.tags}
+              />
+
               <p
-                className="project-listing__preview-excerpt"
-                dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}
+                className="project-listing__excerpt-full"
+                dangerouslySetInnerHTML={{
+                  __html: metadata.projectExcerptFull && metadata.projectExcerptFull[0]
+                }}
+              />
+
+              <ViewMoreBtn
+                url={project.slug}
+                isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
               />
             </div>
           </div>
-        </a>
-
-        <div className={`project-listing__detailed ${isToggled ? 'project-listing__detailed--toggled' : null}`}>
-          <div className="project-listing__detailed-body">
-            <ProjectInfoBar
-              client={metadata.projectClientName && metadata.projectClientName[0]}
-              date={metadata.projectDate && metadata.projectDate[0]}
-              tags={project.tags}
-            />
-
-            <p
-              className="project-listing__excerpt-full"
-              dangerouslySetInnerHTML={{
-                __html: metadata.projectExcerptFull && metadata.projectExcerptFull[0]
-              }}
-            />
-
-            <ViewMoreBtn
-              url={project.slug}
-              isVisible={metadata.projectHasCaseStudy && !!JSON.parse(metadata.projectHasCaseStudy)}
-            />
-          </div>
         </div>
-      </div>
-    </li>
-  );
-};
+      </li>
+    );
+  }
+}
 
 ProjectListing.defaultProps = {
   showCategory: false,

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProjectThumbnail = ({ src, alt, srcset }) => {
   return (
-    <img className="img-fluid" alt={alt} src={src} srcSet={srcset} />
+    <img className="project-thumbnail__img img-fluid" alt={alt} src={src} srcSet={srcset} />
   );
 };
 

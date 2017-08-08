@@ -79,23 +79,21 @@
   }
 
   &__detailed {
-    max-height: 0;
     overflow: hidden;
     transition: 200ms ease-in;
 
-    .project-listing--toggled & {
-      max-height: 520px;
-
-      @include media-breakpoint-up(md) {
-        max-height: 450px;
-      }
+    &--loaded:not(&--toggled) {
+      max-height: 0 !important;
     }
   }
 
   &__detailed-body {
-    opacity: 0;
     transition: 120ms ease-in;
     transition-delay: 200ms;
+
+    .project-listing--loaded {
+      opacity: 0;
+    }
 
     .project-listing--toggled & {
       opacity: 1;
