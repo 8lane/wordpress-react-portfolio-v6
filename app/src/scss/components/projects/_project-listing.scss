@@ -94,11 +94,11 @@
     margin-bottom: 0;
     padding: $spacer;
     opacity: 0;
-    animation: fadeOut 150ms ease-in forwards;
+    animation: fadeOut 200ms ease-in forwards;
     animation-delay: 0;
 
     .project-listing__detailed--toggled & {
-      animation: fadeSlideIn 150ms ease-in forwards;
+      animation: fadeSlideIn 350ms ease-in forwards;
       animation-delay: 500ms;
     }
 
