@@ -98,8 +98,8 @@
     animation-delay: 0;
 
     .project-listing__detailed--toggled & {
-      animation: fadeSlideIn 350ms ease-in forwards;
-      animation-delay: 500ms;
+      animation: fadeSlideIn 300ms ease-in forwards;
+      animation-delay: 400ms;
     }
 
     @include media-breakpoint-up(sm) {
