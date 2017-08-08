@@ -52,6 +52,7 @@
 				<span class="footer__link footer__link--credit">
 					&copy; Tom Christian &ndash; Created with React &amp; Wordpress API
 				</span>
+				<span class="footer__link footer__link--credit footer__link--video">Footage from <a href="https://www.youtube.com/channel/UC0BcBb8gTlHW6_EtRqwKY7g" target="_blank" rel="external">The Soan Age</a></span>
 			</div>
 		</div>
 	</footer>

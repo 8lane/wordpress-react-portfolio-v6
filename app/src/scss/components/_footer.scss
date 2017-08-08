@@ -52,6 +52,21 @@
       font-size: 70%;
       color: rgba($white, 0.5);
     }
+
+    &--video {
+      display: block;
+      color: rgba($white, 0.2);
+
+      a {
+        color: rgba($white, 0.2);
+        text-decoration: underline;
+        transition: color 150ms ease-in;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
   }
 
   &__icon {
