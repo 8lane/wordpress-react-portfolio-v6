@@ -10,11 +10,11 @@
 
     .project-listing__detailed--toggled & {
       animation: fadeSlideIn 300ms ease-in forwards;
-    }
 
-    &:nth-child(1) { animation-delay: 100ms; }
-    &:nth-child(2) { animation-delay: 200ms; }
-    &:nth-child(3) { animation-delay: 300ms; }
+      &:nth-child(1) { animation-delay: 100ms; }
+      &:nth-child(2) { animation-delay: 200ms; }
+      &:nth-child(3) { animation-delay: 300ms; }
+    }
   }
 
   @include media-breakpoint-up(sm) {
