@@ -7,17 +7,13 @@ import getProjectYear from '../helpers';
 
 const sr = ScrollReveal();
 
-const scrollConfig = {
-  duration: 400,
-  delay: 150,
-};
-
 class ProjectListing extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       hasLoaded: false,
+      isAnimated: false,
     };
 
     this.calculateProjectHeight = this.calculateProjectHeight.bind(this);
@@ -52,14 +48,23 @@ class ProjectListing extends React.Component {
       onToggleMore
     } = this.props;
 
-    const { hasLoaded } = this.state;
+    const { hasLoaded, isAnimated } = this.state;
+
+    const scrollConfig = {
+      duration: 400,
+      delay: 150,
+      beforeReveal: () => this.setState({ isAnimated: true })
+    };
 
     return (
       <li
         ref={(element) => {
           element && sr.reveal(element, scrollConfig);
         }}
-        className={`project-listing ${isToggled ? 'project-listing--toggled' : ''}`}
+        className={classNames('project-listing', {
+          'project-listing--toggled': isToggled,
+          'project-listing--animated': isAnimated,
+        })}
       >
         {showCategory ?
           <h3 className="project-listing__date">{getProjectYear(project)}</h3>
@@ -72,6 +77,7 @@ class ProjectListing extends React.Component {
 
             <div className="col-xs-12 col-md-5">
               <ProjectThumbnail
+                lazyLoad={!!isAnimated}
                 alt={project.title.rendered}
                 src={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`}
                 srcset={`./wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}@2x.jpg 2x`}
