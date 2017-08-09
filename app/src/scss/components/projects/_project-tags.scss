@@ -1,25 +1,20 @@
 .project-tags {
-  @include media-breakpoint-up(sm) {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  flex-wrap: wrap;
 
     &__tag {
       display: none;
+      flex: 0 0 50%;
 
       .project-listing--animated & {
-        display: block;
+        display: flex;
       }
 
       @include media-breakpoint-up(sm) {
-        flex: 0 0 50%;
-      }
-
-      @include media-breakpoint-up(md) {
         flex: 0 0 100%;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(xl) {
         flex: 0 0 50%;
       }
     }

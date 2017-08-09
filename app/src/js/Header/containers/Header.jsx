@@ -4,6 +4,8 @@ import React from 'react';
 
 import { MainCTAs } from '../../MainCTAs';
 
+const imgPath = './wp-content/themes/tc-portfolio-v6/app/dist/images';
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -57,10 +59,10 @@ class Header extends React.Component {
       <div className="header">
         <div className="header__bg" />
 
-        <video ref={(video) => { this.videoRef = video; }} className="header__video" muted>
-          <source src="./wp-content/themes/tc-portfolio-v6/app/dist/images/header-video.mp4" type="video/mp4" />
-          <source src="media/demo.ogv" type="video/ogg" />
-          <source src="media/demo.webm" type="video/webm" />
+        <video ref={(video) => { this.videoRef = video; }} className="header__video" muted loop>
+          <source src={`${imgPath}/header-video.mp4`} type="video/mp4" />
+          <source src={`${imgPath}/header-video.ogv`} type="video/ogg" />
+          {/*}<source src={`${imgPath}/header-video.webm`} type="video/webm" />*/}
         </video>
 
         <div className="header__content container">

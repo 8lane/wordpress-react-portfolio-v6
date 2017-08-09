@@ -1,6 +1,11 @@
 .timeline-stem {
+  display: none;
   position: absolute;
   bottom: -35px;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
 
   &__path {
     stroke-dasharray: 1000;

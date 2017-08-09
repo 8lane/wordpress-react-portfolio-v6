@@ -1,34 +1,42 @@
-$marker-size-xs: 90px;
+$marker-size-xs: 50px;
+$marker-size-sm: 90px;
 
 .timeline-cta {
-  position: absolute;
-  top: -124px;
+  display: none;
   color: $white;
   width: $marker-size-xs;
   height: $marker-size-xs;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 50%;
-  margin-left: -#{$marker-size-xs / 2};
-  animation: timelineGlow 1500ms infinite;
-  animation-delay: 2s;
-  border-radius: 50%;
-  transition: 200ms ease-in;
-  cursor: pointer;
 
   &:hover, &:after {
     text-decoration: none;
     color: $white;
   }
 
-  &:hover {
-    background-color: rgba($brand-success, 0.15);
+  @include media-breakpoint-up(sm) {
+    position: absolute;
+    top: -124px;
+    width: $marker-size-sm;
+    height: $marker-size-sm;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transition: 200ms ease-in;
+    cursor: pointer;
+    margin-left: -#{$marker-size-sm / 2};
+    animation: timelineGlow 1500ms infinite;
+    animation-delay: 2s;
+    border-radius: 50%;
+    font-size: inherit;
 
-    .timeline-circle__path,
-    .timeline-stem__path {
-      stroke: $brand-success;
+    &:hover {
+      background-color: rgba($brand-success, 0.15);
+
+      .timeline-circle__path,
+      .timeline-stem__path {
+        stroke: $brand-success;
+      }
     }
   }
 
@@ -37,6 +45,10 @@ $marker-size-xs: 90px;
     font-size: 110%;
     opacity: 0;
     animation: fadeIn 250ms ease-in forwards;
-    animation-delay: 2s;
+    animation-delay: 500ms;
+
+    @include media-breakpoint-up(sm) {
+      animation-delay: 2s;
+    }
   }
 }

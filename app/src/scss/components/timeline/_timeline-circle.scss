@@ -1,4 +1,10 @@
 .timeline-circle {
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
+
   &__path {
     fill: none;
     stroke: $white;
