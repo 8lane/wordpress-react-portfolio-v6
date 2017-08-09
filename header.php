@@ -21,6 +21,8 @@
 
 	<?php wp_head(); ?>
 
+	<?php include('favicons.php'); ?>
+
 	<script>
 		window.__PRELOADED_STATE__ = {
 			siteTitle: '<?php echo get_bloginfo('name') ?>',
