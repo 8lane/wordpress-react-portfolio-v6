@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'app/dist')
   },
   resolve: {
+    // extensions: ['*', '.js', '.jsx'], // when building webpack prod
     extensions: ['', '.js', '.jsx'],
   },
   devtool: 'cheap-module-source-map',
