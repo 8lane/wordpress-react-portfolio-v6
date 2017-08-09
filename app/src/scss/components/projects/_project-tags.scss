@@ -1,12 +1,15 @@
 .project-tags {
-
   @include media-breakpoint-up(sm) {
     display: flex;
     flex-wrap: wrap;
   }
 
     &__tag {
-      display: block;
+      display: none;
+
+      .project-listing--animated & {
+        display: block;
+      }
 
       @include media-breakpoint-up(sm) {
         flex: 0 0 50%;
