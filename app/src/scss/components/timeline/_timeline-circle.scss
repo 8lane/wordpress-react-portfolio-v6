@@ -3,6 +3,11 @@
 
   @include media-breakpoint-up(sm) {
     display: block;
+    position: absolute;
+    top: 0;
+
+    &--left { left: 0; }
+    &--right { right: 0; }
   }
 
   &__path {
@@ -15,13 +20,5 @@
     animation: dash 2s ease-in forwards;
     animation-delay: 1s;
     transition: 200ms ease-in;
-  }
-
-  &--left {
-
-  }
-
-  &--right {
-
   }
 }

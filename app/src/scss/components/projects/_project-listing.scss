@@ -74,12 +74,14 @@
 
   &__preview-title {
     color: $brand-dark;
+    transform: translate3d(0, 0, 0);
   }
 
   &__preview-excerpt {
     margin-bottom: 0;
     color: rgba($brand-dark, 0.7);
     font-size: 88%;
+    transform: translate3d(0, 0, 0);
   }
 
   &__detailed {
