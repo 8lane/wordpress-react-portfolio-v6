@@ -21,7 +21,7 @@
 
 	<?php wp_head(); ?>
 
-	<?php include('favicons.php'); ?>
+	<?php get_template_part('favicons'); ?>
 
 	<script>
 		window.__PRELOADED_STATE__ = {
