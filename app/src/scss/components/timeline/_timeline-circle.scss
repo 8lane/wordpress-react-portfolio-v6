@@ -14,11 +14,16 @@
     fill: none;
     stroke: $white;
     stroke-width: 2px;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
     stroke-miterlimit: 10;
     animation: dash 2s ease-in forwards;
     animation-delay: 1s;
     transition: 200ms ease-in;
+
+    @supports (-ms-ime-align:auto) {
+      stroke-dasharray: 450px;
+      stroke-dashoffset: 150px;
+    }
   }
 }

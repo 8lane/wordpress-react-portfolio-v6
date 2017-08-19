@@ -10,15 +10,19 @@
   }
 
   &__path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;
     animation: dash 1s ease-in forwards;
     animation-delay: 2.8s;
-
     fill: none;
     stroke: $white;
     stroke-miterlimit: 10;
     stroke-width: 1px;
     transition: 200ms ease-in;
+
+    @supports (-ms-ime-align:auto) {
+      stroke-dasharray: 450px;
+      stroke-dashoffset: 150px;
+    }
   }
 }
