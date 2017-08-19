@@ -50,9 +50,9 @@
 
 			<div class="footer__credits">
 				<span class="footer__link footer__link--credit">
-					&copy; Tom Christian &ndash; Created with React &amp; Wordpress API
+					<a class="footer__link footer__link--copyright" href="<?php echo get_home_url(); ?>">&copy; Tom Christian</a> &ndash; <a class="footer__link footer__link--github" href="https://github.com/tctc91/portfolio-v6">Created with React &amp; Wordpress API</a>
 				</span>
-				<span class="footer__link footer__link--credit footer__link--video">Footage from <a href="https://www.youtube.com/channel/UC0BcBb8gTlHW6_EtRqwKY7g" target="_blank" rel="external">The Soan Age</a></span>
+				<span class="footer__link footer__link--credit footer__link--video">Footage from <a href="https://www.youtube.com/channel/UC0BcBb8gTlHW6_EtRqwKY7g" target="_blank" rel="external">The Soan Age &rarr;</a></span>
 			</div>
 		</div>
 	</footer>
