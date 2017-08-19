@@ -29,7 +29,7 @@
 		window.__PRELOADED_STATE__ = {
 			siteTitle: '<?php echo get_bloginfo('name') ?>',
 			siteDescription: '<?php echo html_entity_decode(get_bloginfo( 'description', 'display' )) ?>',
-			siteURL: '<?php echo network_site_url('/') ?>'
+			siteURL: '<?php echo get_home_url() ?>'
 		};
 	</script>
 
