@@ -5,21 +5,14 @@ const path = require('path');
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProduction = nodeEnv === 'production';
 
-console.log('NODEENV: ', nodeEnv)
-
-const devConfig = {
-  IMG_DIR: JSON.stringify('./wp-content/themes/tc-portfolio-v6/app/dist/images'),
-};
-
-const prodConfig = {
-  IMG_DIR: JSON.stringify('./wordpress/wp-content/themes/tc-portfolio-v6/app/dist/images'),
-};
+const devConfig = require('./app/src/config/config.dev.js');
+const prodConfig = require('./app/src/config/config.prod.js');
 
 const config = isProduction ? prodConfig : devConfig;
 
 const plugins = [
   new webpack.DefinePlugin({
-    'process.env': Object.assign({}, { 'NODE_ENV': JSON.stringify(nodeEnv) }, config)
+    'process.env': Object.assign({}, { NODE_ENV: JSON.stringify(nodeEnv) }, config)
   }),
 ];
 
@@ -91,7 +84,7 @@ if (isProduction) {
   loaders.push(
     { // sass / scss loader for webpack
       test: /\.(sass|scss)$/,
-      loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
+      loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader', 'autoprefixer-loader']),
     }
   )
 }
