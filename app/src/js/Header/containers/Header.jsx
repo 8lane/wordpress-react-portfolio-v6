@@ -1,10 +1,7 @@
 /* global window */
-
 import React from 'react';
 
 import { MainCTAs } from '../../MainCTAs';
-
-const imgPath = './wordpress/wp-content/themes/tc-portfolio-v6/app/dist/images';
 
 class Header extends React.Component {
   constructor(props) {
@@ -60,9 +57,8 @@ class Header extends React.Component {
         <div className="header__bg" />
 
         <video ref={(video) => { this.videoRef = video; }} className="header__video" muted loop>
-          <source src={`${imgPath}/header-video.mp4`} type="video/mp4" />
-          <source src={`${imgPath}/header-video.ogv`} type="video/ogg" />
-          {/*}<source src={`${imgPath}/header-video.webm`} type="video/webm" />*/}
+          <source src={`${process.env.IMG_DIR}/header-video.mp4`} type="video/mp4" />
+          <source src={`${process.env.IMG_DIR}/header-video.ogv`} type="video/ogg" />
         </video>
 
         <div className="header__content container">

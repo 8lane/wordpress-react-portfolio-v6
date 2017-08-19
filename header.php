@@ -19,6 +19,8 @@
 
 	<title><?php bloginfo( 'name' ); ?> &ndash; Senior Developer &amp; Designer from Bournemouth, UK</title>
 
+	<!-- <link rel="stylesheet" href="http://localhost:8080/app/dist/app.css" type="text/css" media="all" /> -->
+
 	<?php wp_head(); ?>
 
 	<?php get_template_part('favicons'); ?>

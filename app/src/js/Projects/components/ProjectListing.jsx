@@ -79,8 +79,8 @@ class ProjectListing extends React.Component {
               <ProjectThumbnail
                 lazyLoad={!!isAnimated}
                 alt={project.title.rendered}
-                src={`./wordpress/wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}.jpg`}
-                srcset={`./wordpress/wp-content/themes/tc-portfolio-v6/app/dist/images/project-thumbnails/${project.slug}@2x.jpg 2x`}
+                src={`${process.env.IMG_DIR}/project-thumbnails/${project.slug}.jpg`}
+                srcset={`${process.env.IMG_DIR}/project-thumbnails/${project.slug}@2x.jpg 2x`}
               />
             </div>
             <div className="col-xs-12 col-md-7">
