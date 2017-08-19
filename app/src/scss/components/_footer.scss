@@ -29,6 +29,17 @@
 
   &__link {
     color: rgba($white, 0.8);
+    transition: all 150ms ease-in;
+
+    &--copyright,
+    &--github {
+      color: rgba($white, 0.5);
+
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
+    }
 
     &--contact {
       display: block;
@@ -59,8 +70,8 @@
 
       a {
         color: rgba($white, 0.2);
-        text-decoration: underline;
-        transition: color 150ms ease-in;
+        text-decoration: none;
+        transition: all 150ms ease-in;
 
         &:hover {
           color: $white;
