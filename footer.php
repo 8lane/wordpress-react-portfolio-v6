@@ -60,5 +60,7 @@
 
 <?php wp_footer(); ?>
 
+<script src="http://localhost:8080/app/dist/app.js"></script>
+
 </body>
 </html>
