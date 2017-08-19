@@ -42,7 +42,7 @@ class Projects extends React.Component {
             <TimelineCircle size={93} half="left" />
             <TimelineCircle size={93} half="right" />
             <span className="timeline-cta__label display-4">{currentYear}</span>
-            <TimelineStem />
+            <TimelineStem height={33} width={2} />
           </a>
           : null
         }

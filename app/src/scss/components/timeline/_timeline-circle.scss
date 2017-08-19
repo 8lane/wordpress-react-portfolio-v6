@@ -6,8 +6,8 @@
     position: absolute;
     top: 0;
 
-    &--left { left: 0; }
-    &--right { right: 0; }
+    &--left { left: -2px; }
+    &--right { right: -1px; }
   }
 
   &__path {
