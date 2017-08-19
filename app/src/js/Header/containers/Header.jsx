@@ -4,7 +4,7 @@ import React from 'react';
 
 import { MainCTAs } from '../../MainCTAs';
 
-const imgPath = './wp-content/themes/tc-portfolio-v6/app/dist/images';
+const imgPath = './wordpress/wp-content/themes/tc-portfolio-v6/app/dist/images';
 
 class Header extends React.Component {
   constructor(props) {
