@@ -10,6 +10,11 @@ const prodConfig = require('./app/src/config/config.prod.js');
 
 const config = isProduction ? prodConfig : devConfig;
 
+const extractSass = new ExtractTextPlugin({
+  filename: "app.css",
+  disable: process.env.NODE_ENV === "development"
+});
+
 const plugins = [
   new webpack.DefinePlugin({
     'process.env': Object.assign({}, { NODE_ENV: JSON.stringify(nodeEnv) }, config)
@@ -18,10 +23,20 @@ const plugins = [
 
 if (isProduction) {
   plugins.push(
-    new ExtractTextPlugin({
-      filename: `${path.resolve(__dirname, 'app/dist')}/app.css`,
-      allChunks: true,
+    extractSass,
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        screw_ie8: true
+      }
     })
+    // new ExtractTextPlugin({
+    //   filename: `${path.resolve(__dirname, 'app/dist')}/app.css`,
+    //   allChunks: true,
+    // })
+  )
+} else {
+  plugins.push(
+    extractSass
   )
 }
 
@@ -41,11 +56,7 @@ const loaders = [
   {
     test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
     loader: 'file-loader?name=fonts/[name].[ext]'
-  },
-  {
-    test: /\.(png|jpg|svg)$/,
-    loader: 'url-loader'
-  },
+  }
 ];
 
 if (!isProduction) {
@@ -63,28 +74,45 @@ if (!isProduction) {
         {
           loader: 'css-loader',
           options: {
-            sourceMap: true,
+            sourceMap: false,
             url: false,
           },
         },
         {
           loader: 'sass-loader',
           options: {
-            sourceMap: true,
-            url: false,
+            sourceMap: false,
+            url: false
           },
         },
         'autoprefixer-loader',
       ],
     }
   )
-}
-
-if (isProduction) {
+} else {
   loaders.push(
-    { // sass / scss loader for webpack
-      test: /\.(sass|scss)$/,
-      loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader', 'autoprefixer-loader']),
+    {
+      test: /\.scss$/,
+      use: extractSass.extract({
+        use: [{
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            url: false,
+            minimize: true,
+          },
+        }, {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true,
+            url: false,
+            minimize: true,
+            data: "$IMG_DIR: 'images'; $FONT_DIR: 'fonts';"
+          },
+        }],
+        // use style-loader in development
+        fallback: 'style-loader'
+      })
     }
   )
 }

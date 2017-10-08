@@ -11,6 +11,12 @@ Text Domain: tc-portfolio-v6
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+$IMG_DIR: 'wp-content/themes/tc-portfolio-v6/app/dist/images' !default;
+$FONT_DIR: 'wp-content/themes/tc-portfolio-v6/app/dist/fonts' !default;
+
+// $IMG_DIR: 'images';
+// $FONT_DIR: 'fonts';
+
 @import "variables";
 @import "bootstrap";
 @import "fonts/fonts";
