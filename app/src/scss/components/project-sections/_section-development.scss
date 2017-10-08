@@ -1,0 +1,114 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+$xs-logo-width:                         50px;
+$xs-sass-logo-width:                    150px;
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-development {
+	padding-bottom: 0;
+
+  &__tech {
+    margin-top: $spacer * 7;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: $spacer * 7;
+    }
+  }
+
+  &__logo {
+    min-width: $xs-logo-width;
+    max-width: $xs-logo-width;
+  }
+
+  &__sass {
+    background-image: url(#{$IMG_DIR}/bg-sass.svg);
+    background-position: -13rem -8rem;
+    background-size: 70rem;
+  }
+
+  &__sass-logo {
+    max-width: $xs-sass-logo-width;
+    min-width: $xs-sass-logo-width;
+    margin-bottom: $spacer * 3;
+  }
+
+  &__items {
+    margin-top: $spacer * 5;
+  }
+}
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(sm) {
+	.s-development {
+		&__tech,
+		&__slide {
+    	padding-right: 0;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.s-development {
+		&__tech {
+    	min-height: 500px;
+			position: relative;
+		}
+
+		&__items {
+			&--sass {
+				max-width: 79%;
+				float: left;
+				margin-top: 0;
+		    padding-left: $spacer * 3;
+			}
+		}
+
+		&__item {
+			.s-development__items--tech & {
+				width: 100%;
+				float: none;
+				padding: 0;
+				padding-left: $xs-logo-width + 20;
+				text-align: left;
+			}
+
+			.s-development__items--sass & {
+				&:nth-last-child(2) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__logo {
+			position: absolute;
+			top: 6px;
+	    left: 0;
+		}
+
+		&__editor-img {
+			width: 100%;
+			min-width: 660px;
+			height: 545px;
+			position: relative;
+			background: url(#{$IMG_DIR}/code.png) no-repeat;
+			background-size: 100%;
+
+			@include retina() {
+				background: url(#{$IMG_DIR}/code@2x.png) no-repeat;
+				background-size: 100%;
+			}
+		}
+
+		&__sass-logo {
+			float: left;
+	    max-width: 20%;
+	  }
+	}
+}

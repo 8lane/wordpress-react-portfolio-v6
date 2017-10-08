@@ -1,0 +1,155 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.s-outcome {
+	&__section {
+		&:not(:first-child) {
+    	margin-top: $spacer;
+		}
+	}
+
+  &__items {
+    margin-top: $spacer * 5;
+    margin-bottom: $spacer * 2;
+  }
+
+	&__item {
+		margin-top: $spacer / 2;
+	}
+
+  &__image {
+		width: 100%;
+    max-width: 100%;
+		min-width: initial;
+		border-radius: 0 0 3px 3px;
+
+		&--home {
+			max-width: 850px;
+		}
+  }
+
+	&__projects-img {
+		width: 100%;
+		min-width: 500px;
+		height: 310px;
+		position: relative;
+		background: url(#{$IMG_DIR}/outcome/anw/outcome-projects.png) no-repeat;
+		background-size: 100%;
+
+		@include retina() {
+			background: url(#{$IMG_DIR}/outcome/anw/outcome-projects@2x.png) no-repeat;
+			background-size: 100%;
+		}
+	}
+
+	&__highlights {
+		margin-top: $spacer * 5;
+	}
+
+	&__highlight {
+		position: relative;
+	}
+
+	&__highlight-title {
+		color: white;
+	}
+
+	&__highlight-desc {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-down(sm) {
+	.s-outcome {
+		&__highlight-desc {
+			max-width: 420px;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.s-outcome {
+		&__projects-img {
+			width: 800px;
+			height: 530px;
+		}
+
+		&__highlights {
+			max-width: 850px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.s-outcome {
+		&__section {
+			&:not(:first-child) {
+	    	margin-top: $spacer;
+			}
+		}
+
+		&__item {
+			margin-top: $spacer;
+		}
+
+		&__highlight {
+			.s-outcome__items--projects & {
+				margin-bottom: $spacer * 4;
+
+				&:first-child {
+					padding-top: $spacer / 2;
+				}
+			}
+		}
+
+		&__image {
+			&--projects {
+				max-width: 560px;
+				float: right;
+			}
+		}
+
+		&__projects-img {
+			height: 500px;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.s-outcome {
+		&__image {
+			&--projects {
+				max-width: 60%;
+			}
+		}
+
+		&__projects-img {
+			width: 900px;
+			height: 560px;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.s-outcome {
+		&__image {
+			&--projects {
+				max-width: 900px;
+			}
+		}
+
+		&__projects-img {
+			width: 900px;
+		}
+	}
+}

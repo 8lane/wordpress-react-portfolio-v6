@@ -1,0 +1,83 @@
+/*  Variables
+/*--------------------------------------------------------------*/
+
+body {
+	background: #f2f2f2;
+}
+
+
+$xs-panel-max-width:													1400px;
+$xs-panel-padding:                            $spacer * 9;
+$xs-panel-title-margin-bottom:                $spacer * 3;
+
+$lg-panel-padding:                            $spacer * 14;
+
+
+/*  Styles
+/*--------------------------------------------------------------*/
+
+.panel {
+	max-width: $xs-panel-max-width;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+	padding-bottom: $xs-panel-padding;
+
+  &:not(:first-child) {
+    padding-top: $xs-panel-padding;
+  }
+
+	$root: &;
+	&--lite#{$root}--dark {
+		border-bottom: 1px solid lighten($brand-dark, 10%);
+	}
+
+  &--light { background: white; }
+  &--dark { background: $brand-dark; }
+  &--gray { background: #f1f1f1; }
+  &--purple { background: $brand-warning; }
+	&--blue { background: $brand-primary; }
+
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+
+  &__heading {
+    .panel--dark & { color: white; }
+  }
+
+  &__title {
+    margin-bottom: $xs-panel-title-margin-bottom;
+  }
+
+  &__desc {
+    .panel--dark & { color: rgba(white, 0.6); }
+
+		&--middle {
+			max-width: 35rem;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+
+		&--lead {
+			max-width: 45rem;
+		}
+  }
+
+}
+
+
+/*  Media Queries
+/*--------------------------------------------------------------*/
+
+@include media-breakpoint-up(lg) {
+	.panel {
+		padding-bottom: $lg-panel-padding;
+
+	  &:not(:first-child) {
+	    padding-top: $lg-panel-padding;
+	  }
+	}
+}
