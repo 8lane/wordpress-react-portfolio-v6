@@ -8,13 +8,20 @@ const picturefill = require('picturefill');
 
 picturefill();
 
-/* global document */
-ReactDOM.render(
-  <Projects />,
-  document.getElementById('tc-projects')
-);
+const headerNode = document.getElementById('tc-header');
+const projectsNode = document.getElementById('tc-projects');
 
-ReactDOM.render(
-  <Header />,
-  document.getElementById('tc-header')
-);
+/* global document */
+if (projectsNode) {
+	ReactDOM.render(
+		<Projects />,
+		projectsNode
+	);
+}
+
+if (headerNode) {
+	ReactDOM.render(
+		<Header />,
+		headerNode
+	);
+}
