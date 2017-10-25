@@ -12,7 +12,7 @@ const config = isProduction ? prodConfig : devConfig;
 
 const extractSass = new ExtractTextPlugin({
   filename: "app.css",
-  disable: process.env.NODE_ENV === "development"
+  // disable: process.env.NODE_ENV === "development"
 });
 
 const plugins = [
@@ -25,6 +25,7 @@ if (isProduction) {
   plugins.push(
     extractSass,
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       compress: {
         screw_ie8: true
       }
@@ -74,14 +75,14 @@ if (!isProduction) {
         {
           loader: 'css-loader',
           options: {
-            sourceMap: false,
+            sourceMap: true,
             url: false,
           },
         },
         {
           loader: 'sass-loader',
           options: {
-            sourceMap: false,
+            sourceMap: true,
             url: false
           },
         },
