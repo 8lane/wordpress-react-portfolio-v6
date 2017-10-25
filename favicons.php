@@ -1,4 +1,7 @@
-<?php $imagePath = 'wp-content/themes/tc-portfolio-v6/app/dist/images/favicons'; ?>
+<?php 
+  $homeUrl = get_site_url();
+  $imagePath = "{$homeUrl}/wp-content/themes/tc-portfolio-v6/app/dist/images/favicons";
+?>
 
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $imagePath; ?>/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="<?php echo $imagePath; ?>/apple-icon-60x60.png">
