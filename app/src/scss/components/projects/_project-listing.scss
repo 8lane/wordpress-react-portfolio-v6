@@ -109,7 +109,7 @@
 
     .project-listing__detailed--toggled & {
       animation: fadeSlideIn 300ms ease-in forwards;
-      animation-delay: 400ms;
+      animation-delay: 500ms;
     }
 
     @include media-breakpoint-up(sm) {

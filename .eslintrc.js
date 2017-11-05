@@ -13,6 +13,7 @@ module.exports = {
 		"no-tabs": 0,
 		"indent": ["error", "tab"],
 		"react/jsx-indent": [2, "tab"],
+		"react/jsx-indent-props": [2, "tab"],
 		"comma-dangle": 0,
   }
 };

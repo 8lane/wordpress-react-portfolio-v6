@@ -1,0 +1,43 @@
+.project-ctas {
+	padding-left: $spacer;
+	padding-right: $spacer;
+	margin-top: $spacer;
+	margin-bottom: $spacer;
+	text-align: center;
+
+	@include media-breakpoint-up(sm) {
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: $spacer * 2;
+		margin-bottom: $spacer * 2;
+	}
+
+	&__btn {
+		display: block;
+    opacity: 0;
+    animation: fadeOut 200ms ease-in forwards;
+    animation-delay: 0;
+		margin-bottom: $spacer;
+		
+    .project-listing__detailed--toggled & {
+      animation: fadeSlideIn 300ms ease-in forwards;
+
+      &:nth-child(1) { animation-delay: 400ms; }
+      &:nth-child(2) { animation-delay: 500ms; }
+		}
+
+		@include media-breakpoint-up(sm) {
+			display: inline-block;
+			min-width: 210px;
+			margin-bottom: 0;
+			
+			&:first-child {
+				margin-right: $spacer;
+			}
+	
+			&:last-child {
+				margin-left: $spacer;
+			}
+    }
+	}
+}
